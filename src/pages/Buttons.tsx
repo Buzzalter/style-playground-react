@@ -48,6 +48,28 @@ export default function Buttons() {
       ]
     },
     {
+      title: "Funky & Creative Styles",
+      description: "Experimental and creative button designs with unique visual effects",
+      examples: [
+        { 
+          component: <Button className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">Retro Gradient</Button>, 
+          code: '<Button className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">Retro Gradient</Button>' 
+        },
+        { 
+          component: <Button className="bg-transparent border-2 border-dashed border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:border-solid">Dashed Border</Button>, 
+          code: '<Button className="bg-transparent border-2 border-dashed border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:border-solid">Dashed Border</Button>' 
+        },
+        { 
+          component: <Button className="relative overflow-hidden bg-primary text-primary-foreground before:absolute before:inset-0 before:bg-white before:opacity-0 hover:before:opacity-20 before:transition-opacity before:duration-300">Overlay Effect</Button>, 
+          code: '<Button className="relative overflow-hidden bg-primary text-primary-foreground before:absolute before:inset-0 before:bg-white before:opacity-0 hover:before:opacity-20 before:transition-opacity before:duration-300">Overlay Effect</Button>' 
+        },
+        { 
+          component: <Button className="bg-card border-0 shadow-2xl text-foreground hover:shadow-glow hover:scale-110 transition-all duration-500 rounded-2xl">Floating Card</Button>, 
+          code: '<Button className="bg-card border-0 shadow-2xl text-foreground hover:shadow-glow hover:scale-110 transition-all duration-500 rounded-2xl">Floating Card</Button>' 
+        },
+      ]
+    },
+    {
       title: "Status & Feedback",
       description: "Buttons for different states and user feedback",
       examples: [

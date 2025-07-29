@@ -255,6 +255,232 @@ export default function Forms() {
     }
   ];
 
+  const flexExamples = [
+    {
+      component: (
+        <div className="flex flex-col space-y-4">
+          <div className="flex items-center space-x-4">
+            <Label className="w-20 text-sm font-medium">Name:</Label>
+            <Input className="flex-1" placeholder="Enter name" />
+          </div>
+          <div className="flex items-center space-x-4">
+            <Label className="w-20 text-sm font-medium">Email:</Label>
+            <Input className="flex-1" type="email" placeholder="Enter email" />
+          </div>
+        </div>
+      ),
+      code: `<div className="flex flex-col space-y-4">
+  <div className="flex items-center space-x-4">
+    <Label className="w-20 text-sm font-medium">Name:</Label>
+    <Input className="flex-1" placeholder="Enter name" />
+  </div>
+  <div className="flex items-center space-x-4">
+    <Label className="w-20 text-sm font-medium">Email:</Label>
+    <Input className="flex-1" type="email" placeholder="Enter email" />
+  </div>
+</div>`,
+      label: "Horizontal Form Layout"
+    },
+    {
+      component: (
+        <div className="flex flex-wrap gap-4">
+          <div className="flex-1 min-w-[200px]">
+            <Label className="block mb-2">First Name</Label>
+            <Input placeholder="John" />
+          </div>
+          <div className="flex-1 min-w-[200px]">
+            <Label className="block mb-2">Last Name</Label>
+            <Input placeholder="Doe" />
+          </div>
+          <div className="flex-1 min-w-[200px]">
+            <Label className="block mb-2">Email</Label>
+            <Input type="email" placeholder="john@example.com" />
+          </div>
+        </div>
+      ),
+      code: `<div className="flex flex-wrap gap-4">
+  <div className="flex-1 min-w-[200px]">
+    <Label className="block mb-2">First Name</Label>
+    <Input placeholder="John" />
+  </div>
+  <div className="flex-1 min-w-[200px]">
+    <Label className="block mb-2">Last Name</Label>
+    <Input placeholder="Doe" />
+  </div>
+  <div className="flex-1 min-w-[200px]">
+    <Label className="block mb-2">Email</Label>
+    <Input type="email" placeholder="john@example.com" />
+  </div>
+</div>`,
+      label: "Responsive Flex Grid"
+    },
+    {
+      component: (
+        <div className="flex justify-between items-end">
+          <div className="flex-1 mr-4">
+            <Label className="block mb-2">Amount</Label>
+            <Input type="number" placeholder="100.00" />
+          </div>
+          <Button variant="gradient" className="h-10">
+            Calculate
+          </Button>
+        </div>
+      ),
+      code: `<div className="flex justify-between items-end">
+  <div className="flex-1 mr-4">
+    <Label className="block mb-2">Amount</Label>
+    <Input type="number" placeholder="100.00" />
+  </div>
+  <Button variant="gradient" className="h-10">
+    Calculate
+  </Button>
+</div>`,
+      label: "Input with Action Button"
+    }
+  ];
+
+  const labelExamples = [
+    {
+      component: (
+        <div className="space-y-4">
+          <div>
+            <Label className="text-lg font-bold text-primary">Bold Primary Label</Label>
+            <Input className="mt-2" placeholder="Enter value" />
+          </div>
+          <div>
+            <Label className="text-sm text-muted-foreground uppercase tracking-wide">Small Uppercase</Label>
+            <Input className="mt-2" placeholder="Enter value" />
+          </div>
+          <div>
+            <Label className="text-base font-medium bg-gradient-primary bg-clip-text text-transparent">Gradient Label</Label>
+            <Input className="mt-2" placeholder="Enter value" />
+          </div>
+        </div>
+      ),
+      code: `<div>
+  <Label className="text-lg font-bold text-primary">Bold Primary Label</Label>
+  <Input className="mt-2" placeholder="Enter value" />
+</div>
+<div>
+  <Label className="text-sm text-muted-foreground uppercase tracking-wide">Small Uppercase</Label>
+  <Input className="mt-2" placeholder="Enter value" />
+</div>
+<div>
+  <Label className="text-base font-medium bg-gradient-primary bg-clip-text text-transparent">Gradient Label</Label>
+  <Input className="mt-2" placeholder="Enter value" />
+</div>`,
+      label: "Styled Labels"
+    },
+    {
+      component: (
+        <div className="space-y-4">
+          <div className="relative">
+            <Label className="absolute -top-2 left-3 bg-background px-2 text-xs text-primary font-medium">
+              Floating Label
+            </Label>
+            <Input className="pt-4" placeholder=" " />
+          </div>
+          <div>
+            <Label className="flex items-center justify-between">
+              <span>Password</span>
+              <Badge variant="secondary" className="text-xs">Required</Badge>
+            </Label>
+            <Input className="mt-2" type="password" placeholder="••••••••" />
+          </div>
+        </div>
+      ),
+      code: `<div className="relative">
+  <Label className="absolute -top-2 left-3 bg-background px-2 text-xs text-primary font-medium">
+    Floating Label
+  </Label>
+  <Input className="pt-4" placeholder=" " />
+</div>
+<div>
+  <Label className="flex items-center justify-between">
+    <span>Password</span>
+    <Badge variant="secondary" className="text-xs">Required</Badge>
+  </Label>
+  <Input className="mt-2" type="password" placeholder="••••••••" />
+</div>`,
+      label: "Advanced Label Positioning"
+    }
+  ];
+
+  const funkyExamples = [
+    {
+      component: (
+        <div className="space-y-4">
+          <div className="relative group">
+            <Input 
+              className="bg-gradient-to-r from-primary/5 to-secondary/5 border-2 border-primary/20 focus:border-primary focus:ring-4 focus:ring-primary/20 transition-all duration-300 hover:shadow-glow" 
+              placeholder="Glowing input..." 
+            />
+          </div>
+          <div className="relative">
+            <Input 
+              className="rounded-full border-2 border-dashed border-primary/50 bg-primary/5 focus:border-primary focus:bg-primary/10 transition-all duration-300" 
+              placeholder="Rounded dashed input" 
+            />
+          </div>
+          <div className="relative group">
+            <Input 
+              className="bg-card border-0 shadow-xl rounded-2xl focus:shadow-2xl focus:scale-105 transition-all duration-300 text-center" 
+              placeholder="Floating card input" 
+            />
+          </div>
+        </div>
+      ),
+      code: `<Input 
+  className="bg-gradient-to-r from-primary/5 to-secondary/5 border-2 border-primary/20 focus:border-primary focus:ring-4 focus:ring-primary/20 transition-all duration-300 hover:shadow-glow" 
+  placeholder="Glowing input..." 
+/>
+<Input 
+  className="rounded-full border-2 border-dashed border-primary/50 bg-primary/5 focus:border-primary focus:bg-primary/10 transition-all duration-300" 
+  placeholder="Rounded dashed input" 
+/>
+<Input 
+  className="bg-card border-0 shadow-xl rounded-2xl focus:shadow-2xl focus:scale-105 transition-all duration-300 text-center" 
+  placeholder="Floating card input" 
+/>`,
+      label: "Funky Input Styles"
+    },
+    {
+      component: (
+        <div className="space-y-4">
+          <div className="p-6 bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 rounded-2xl border border-primary/20">
+            <Label className="text-lg font-bold mb-4 block text-primary">Fancy Form Section</Label>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <Input className="bg-background/80 backdrop-blur-sm" placeholder="Name" />
+              <Input className="bg-background/80 backdrop-blur-sm" placeholder="Email" />
+            </div>
+          </div>
+          <div className="relative overflow-hidden p-6 bg-card rounded-xl border-2 border-primary/30">
+            <div className="absolute inset-0 bg-gradient-primary opacity-5"></div>
+            <div className="relative z-10">
+              <Label className="block mb-3 text-sm font-medium uppercase tracking-wider">Premium Input</Label>
+              <Input className="bg-transparent border-primary/50 focus:border-primary" placeholder="Enter premium data" />
+            </div>
+          </div>
+        </div>
+      ),
+      code: `<div className="p-6 bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 rounded-2xl border border-primary/20">
+  <Label className="text-lg font-bold mb-4 block text-primary">Fancy Form Section</Label>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <Input className="bg-background/80 backdrop-blur-sm" placeholder="Name" />
+    <Input className="bg-background/80 backdrop-blur-sm" placeholder="Email" />
+  </div>
+</div>
+<div className="relative overflow-hidden p-6 bg-card rounded-xl border-2 border-primary/30">
+  <div className="absolute inset-0 bg-gradient-primary opacity-5"></div>
+  <div className="relative z-10">
+    <Label className="block mb-3 text-sm font-medium uppercase tracking-wider">Premium Input</Label>
+    <Input className="bg-transparent border-primary/50 focus:border-primary" placeholder="Enter premium data" />
+  </div>
+</div>`,
+      label: "Fancy Form Containers"
+    }
+  ];
+
   return (
     <div className="space-y-8 animate-fade-in">
       {/* Header */}
@@ -385,6 +611,111 @@ export default function Forms() {
         <CardContent>
           <div className="grid gap-6">
             {radioExamples.map((example, index) => (
+              <div key={index} className="space-y-3">
+                <Label className="text-sm font-medium text-foreground">{example.label}</Label>
+                <div className="p-4 bg-muted/50 rounded-lg border border-border">
+                  {example.component}
+                </div>
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-medium text-muted-foreground">Code</span>
+                    <Button 
+                      size="sm" 
+                      variant="ghost" 
+                      onClick={() => handleCopyCode(example.code)}
+                    >
+                      <Copy className="w-3 h-3" />
+                    </Button>
+                  </div>
+                  <div className="code-block text-xs">
+                    <pre>{example.code}</pre>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Flex Layout Examples */}
+      <Card className="card-elegant">
+        <CardHeader>
+          <CardTitle>Flex Layout Examples</CardTitle>
+          <CardDescription>Responsive form layouts using flexbox for better organization</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="grid gap-6">
+            {flexExamples.map((example, index) => (
+              <div key={index} className="space-y-3">
+                <Label className="text-sm font-medium text-foreground">{example.label}</Label>
+                <div className="p-4 bg-muted/50 rounded-lg border border-border">
+                  {example.component}
+                </div>
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-medium text-muted-foreground">Code</span>
+                    <Button 
+                      size="sm" 
+                      variant="ghost" 
+                      onClick={() => handleCopyCode(example.code)}
+                    >
+                      <Copy className="w-3 h-3" />
+                    </Button>
+                  </div>
+                  <div className="code-block text-xs">
+                    <pre>{example.code}</pre>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Label Styling Examples */}
+      <Card className="card-elegant">
+        <CardHeader>
+          <CardTitle>Advanced Label Styling</CardTitle>
+          <CardDescription>Creative label designs with gradients, positioning, and typography</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="grid gap-6">
+            {labelExamples.map((example, index) => (
+              <div key={index} className="space-y-3">
+                <Label className="text-sm font-medium text-foreground">{example.label}</Label>
+                <div className="p-4 bg-muted/50 rounded-lg border border-border">
+                  {example.component}
+                </div>
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-medium text-muted-foreground">Code</span>
+                    <Button 
+                      size="sm" 
+                      variant="ghost" 
+                      onClick={() => handleCopyCode(example.code)}
+                    >
+                      <Copy className="w-3 h-3" />
+                    </Button>
+                  </div>
+                  <div className="code-block text-xs">
+                    <pre>{example.code}</pre>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Funky Styling Examples */}
+      <Card className="card-elegant">
+        <CardHeader>
+          <CardTitle>Funky & Creative Styles</CardTitle>
+          <CardDescription>Experimental and creative form designs with unique visual effects</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="grid gap-6">
+            {funkyExamples.map((example, index) => (
               <div key={index} className="space-y-3">
                 <Label className="text-sm font-medium text-foreground">{example.label}</Label>
                 <div className="p-4 bg-muted/50 rounded-lg border border-border">
