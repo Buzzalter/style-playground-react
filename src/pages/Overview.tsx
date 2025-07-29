@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Sparkles, Code, Copy, Eye } from "lucide-react";
 
 export default function Overview() {
+  console.log("Overview component is rendering");
   const stats = [
     { label: "Components", value: "120+", description: "Ready-to-use components" },
     { label: "Variants", value: "500+", description: "Different styling options" },

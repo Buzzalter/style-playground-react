@@ -43,6 +43,7 @@ const navigationItems = [
 ];
 
 export function AppSidebar() {
+  console.log("AppSidebar component is rendering");
   const sidebarState = useSidebar();
   const location = useLocation();
   const currentPath = location.pathname;

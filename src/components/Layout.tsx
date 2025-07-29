@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Github, ExternalLink } from "lucide-react";
 
 export function Layout() {
+  console.log("Layout component is rendering");
   return (
     <SidebarProvider>
       <div className="min-h-screen flex w-full bg-background">
