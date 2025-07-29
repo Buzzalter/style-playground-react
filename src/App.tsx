@@ -13,6 +13,9 @@ import Uploads from "./pages/Uploads";
 import Dropdowns from "./pages/Dropdowns";
 import Toasts from "./pages/Toasts";
 import StatusPage from "./pages/StatusPage";
+import Popups from "./pages/Popups";
+import CanvasPage from "./pages/CanvasPage";
+import Carousels from "./pages/Carousels";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -37,9 +40,9 @@ const App = () => {
             <Route path="toasts" element={<Toasts />} />
             <Route path="progress" element={<ProgressPage />} />
             <Route path="status" element={<StatusPage />} />
-            <Route path="popups" element={<div className="text-center py-12"><h2 className="text-2xl font-bold">Popups & Modals - Coming Soon</h2></div>} />
-            <Route path="canvas" element={<div className="text-center py-12"><h2 className="text-2xl font-bold">Canvas & Drawing - Coming Soon</h2></div>} />
-            <Route path="carousels" element={<div className="text-center py-12"><h2 className="text-2xl font-bold">Image Carousels - Coming Soon</h2></div>} />
+            <Route path="popups" element={<Popups />} />
+            <Route path="canvas" element={<CanvasPage />} />
+            <Route path="carousels" element={<Carousels />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
