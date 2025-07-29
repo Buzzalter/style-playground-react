@@ -7,6 +7,9 @@ import { Layout } from "@/components/Layout";
 import Overview from "./pages/Overview";
 import Buttons from "./pages/Buttons";
 import Forms from "./pages/Forms";
+import Controls from "./pages/Controls";
+import ProgressPage from "./pages/ProgressPage";
+import Uploads from "./pages/Uploads";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,10 +29,10 @@ const App = () => {
             {/* Placeholder routes for other component pages */}
             <Route path="dropdowns" element={<div className="text-center py-12"><h2 className="text-2xl font-bold">Dropdowns - Coming Soon</h2></div>} />
             <Route path="forms" element={<Forms />} />
-            <Route path="controls" element={<div className="text-center py-12"><h2 className="text-2xl font-bold">Sliders & Toggles - Coming Soon</h2></div>} />
-            <Route path="uploads" element={<div className="text-center py-12"><h2 className="text-2xl font-bold">File Uploads - Coming Soon</h2></div>} />
+            <Route path="controls" element={<Controls />} />
+            <Route path="uploads" element={<Uploads />} />
             <Route path="toasts" element={<div className="text-center py-12"><h2 className="text-2xl font-bold">Toasts - Coming Soon</h2></div>} />
-            <Route path="progress" element={<div className="text-center py-12"><h2 className="text-2xl font-bold">Progress & Spinners - Coming Soon</h2></div>} />
+            <Route path="progress" element={<ProgressPage />} />
             <Route path="status" element={<div className="text-center py-12"><h2 className="text-2xl font-bold">Status Indicators - Coming Soon</h2></div>} />
             <Route path="popups" element={<div className="text-center py-12"><h2 className="text-2xl font-bold">Popups & Modals - Coming Soon</h2></div>} />
             <Route path="canvas" element={<div className="text-center py-12"><h2 className="text-2xl font-bold">Canvas & Drawing - Coming Soon</h2></div>} />
