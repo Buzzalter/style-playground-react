@@ -18,17 +18,17 @@
     --popover: 0 0% 100%;
     --popover-foreground: 223 47% 23%;
 
-    --primary: 240 100% 67%;
+    --primary: 350 70% 70%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 250 100% 85%;
+    --primary-glow: 350 80% 85%;
 
-    --secondary: 245 15% 97%;
-    --secondary-foreground: 223 47% 23%;
+    --secondary: 350 20% 96%;
+    --secondary-foreground: 350 30% 25%;
 
-    --muted: 245 15% 97%;
-    --muted-foreground: 223 20% 55%;
+    --muted: 350 15% 97%;
+    --muted-foreground: 350 15% 55%;
 
-    --accent: 270 95% 75%;
+    --accent: 340 75% 75%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -40,22 +40,22 @@
     --warning: 35 100% 55%;
     --warning-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 240 100% 67%;
+    --border: 350 20% 91%;
+    --input: 350 20% 91%;
+    --ring: 350 70% 70%;
 
-    /* Beautiful gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(240 100% 67%), hsl(270 95% 75%));
-    --gradient-secondary: linear-gradient(135deg, hsl(245 15% 97%), hsl(220 13% 91%));
-    --gradient-accent: linear-gradient(135deg, hsl(270 95% 75%), hsl(300 85% 80%));
-    --gradient-hero: linear-gradient(135deg, hsl(240 100% 67%) 0%, hsl(270 95% 75%) 50%, hsl(300 85% 80%) 100%);
+    /* Beautiful pastel red gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(350 70% 70%), hsl(340 75% 75%));
+    --gradient-secondary: linear-gradient(135deg, hsl(350 20% 96%), hsl(350 20% 91%));
+    --gradient-accent: linear-gradient(135deg, hsl(340 75% 75%), hsl(330 80% 80%));
+    --gradient-hero: linear-gradient(135deg, hsl(350 70% 70%) 0%, hsl(340 75% 75%) 50%, hsl(330 80% 80%) 100%);
 
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 hsl(220 13% 91% / 0.05);
     --shadow-md: 0 4px 6px -1px hsl(220 13% 91% / 0.1), 0 2px 4px -1px hsl(220 13% 91% / 0.06);
     --shadow-lg: 0 10px 15px -3px hsl(220 13% 91% / 0.1), 0 4px 6px -2px hsl(220 13% 91% / 0.05);
     --shadow-xl: 0 20px 25px -5px hsl(220 13% 91% / 0.1), 0 10px 10px -5px hsl(220 13% 91% / 0.04);
-    --shadow-glow: 0 0 20px hsl(240 100% 67% / 0.3);
+    --shadow-glow: 0 0 20px hsl(350 70% 70% / 0.3);
 
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
