@@ -3,7 +3,10 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
+import { Layout } from "@/components/Layout";
+import Overview from "./pages/Overview";
+import Buttons from "./pages/Buttons";
+import Forms from "./pages/Forms";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -15,8 +18,21 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Overview />} />
+            <Route path="buttons" element={<Buttons />} />
+            {/* Placeholder routes for other component pages */}
+            <Route path="dropdowns" element={<div className="text-center py-12"><h2 className="text-2xl font-bold">Dropdowns - Coming Soon</h2></div>} />
+            <Route path="forms" element={<Forms />} />
+            <Route path="controls" element={<div className="text-center py-12"><h2 className="text-2xl font-bold">Sliders & Toggles - Coming Soon</h2></div>} />
+            <Route path="uploads" element={<div className="text-center py-12"><h2 className="text-2xl font-bold">File Uploads - Coming Soon</h2></div>} />
+            <Route path="toasts" element={<div className="text-center py-12"><h2 className="text-2xl font-bold">Toasts - Coming Soon</h2></div>} />
+            <Route path="progress" element={<div className="text-center py-12"><h2 className="text-2xl font-bold">Progress & Spinners - Coming Soon</h2></div>} />
+            <Route path="status" element={<div className="text-center py-12"><h2 className="text-2xl font-bold">Status Indicators - Coming Soon</h2></div>} />
+            <Route path="popups" element={<div className="text-center py-12"><h2 className="text-2xl font-bold">Popups & Modals - Coming Soon</h2></div>} />
+            <Route path="canvas" element={<div className="text-center py-12"><h2 className="text-2xl font-bold">Canvas & Drawing - Coming Soon</h2></div>} />
+            <Route path="carousels" element={<div className="text-center py-12"><h2 className="text-2xl font-bold">Image Carousels - Coming Soon</h2></div>} />
+          </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
