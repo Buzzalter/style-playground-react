@@ -417,6 +417,116 @@ export default function Controls() {
         </p>
       </div>
 
+      {/* Flex Layout Examples */}
+      <Card className="card-elegant">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            Flex Layout Examples
+          </CardTitle>
+          <CardDescription>
+            Creative flexbox layouts for control components
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-8">
+            {/* Responsive Control Grid */}
+            <div className="space-y-4">
+              <h4 className="font-semibold text-foreground">Responsive Control Grid</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6 bg-gradient-to-br from-muted/30 to-muted/60 rounded-xl border border-border">
+                <div className="flex flex-col items-center space-y-3 p-4 bg-background/80 rounded-lg backdrop-blur-sm border border-border/50">
+                  <Volume2 className="w-6 h-6 text-primary" />
+                  <Label className="text-center font-medium">Volume</Label>
+                  <Slider value={volume} onValueChange={setVolume} className="w-full" />
+                  <span className="text-sm text-muted-foreground">{volume[0]}%</span>
+                </div>
+                <div className="flex flex-col items-center space-y-3 p-4 bg-background/80 rounded-lg backdrop-blur-sm border border-border/50">
+                  <Sun className="w-6 h-6 text-primary" />
+                  <Label className="text-center font-medium">Brightness</Label>
+                  <Slider value={brightness} onValueChange={setBrightness} className="w-full" />
+                  <span className="text-sm text-muted-foreground">{brightness[0]}%</span>
+                </div>
+                <div className="flex flex-col items-center space-y-3 p-4 bg-background/80 rounded-lg backdrop-blur-sm border border-border/50">
+                  <Bell className="w-6 h-6 text-primary" />
+                  <Label className="text-center font-medium">Notifications</Label>
+                  <Switch checked={notifications} onCheckedChange={setNotifications} className="mt-2" />
+                  <span className="text-sm text-muted-foreground">{notifications ? 'On' : 'Off'}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Horizontal Control Bar */}
+            <div className="space-y-4">
+              <h4 className="font-semibold text-foreground">Control Dashboard</h4>
+              <div className="flex flex-wrap items-center justify-between gap-6 p-6 bg-gradient-primary/10 rounded-xl border-2 border-primary/20">
+                <div className="flex items-center space-x-4 min-w-0 flex-1">
+                  <Volume2 className="w-5 h-5 text-primary flex-shrink-0" />
+                  <div className="flex-1 min-w-[120px]">
+                    <Label className="text-sm font-medium text-primary">Audio Level</Label>
+                    <Slider 
+                      value={volume} 
+                      onValueChange={setVolume} 
+                      className="mt-2 [&>span:first-child]:bg-primary/30 [&>span:last-child]:bg-primary" 
+                    />
+                  </div>
+                  <Badge variant="secondary" className="flex-shrink-0">{volume[0]}%</Badge>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <div className="flex items-center space-x-2">
+                    <Wifi className={`w-4 h-4 ${wifi ? 'text-green-500' : 'text-muted-foreground'}`} />
+                    <Switch checked={wifi} onCheckedChange={setWifi} className="h-5 w-9" />
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Bell className={`w-4 h-4 ${notifications ? 'text-blue-500' : 'text-muted-foreground'}`} />
+                    <Switch checked={notifications} onCheckedChange={setNotifications} className="h-5 w-9" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Stacked Control Cards */}
+            <div className="space-y-4">
+              <h4 className="font-semibold text-foreground">Stacked Control Cards</h4>
+              <div className="space-y-3">
+                <div className="flex items-center justify-between p-4 bg-gradient-to-r from-background to-muted/50 rounded-lg border border-border hover:shadow-lg transition-all duration-300">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 bg-gradient-primary rounded-full flex items-center justify-center">
+                      <Sun className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <Label className="font-medium">Display Brightness</Label>
+                      <p className="text-sm text-muted-foreground">Adjust screen brightness</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-4">
+                    <div className="w-32">
+                      <Slider value={brightness} onValueChange={setBrightness} />
+                    </div>
+                    <Badge variant="outline">{brightness[0]}%</Badge>
+                  </div>
+                </div>
+                
+                <div className="flex items-center justify-between p-4 bg-gradient-to-r from-background to-muted/50 rounded-lg border border-border hover:shadow-lg transition-all duration-300">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                      <Bell className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <Label className="font-medium">Push Notifications</Label>
+                      <p className="text-sm text-muted-foreground">Receive instant alerts</p>
+                    </div>
+                  </div>
+                  <Switch 
+                    checked={notifications} 
+                    onCheckedChange={setNotifications}
+                    className="data-[state=checked]:bg-gradient-to-r data-[state=checked]:from-blue-500 data-[state=checked]:to-purple-600"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
       {/* Slider Examples */}
       <Card className="card-elegant">
         <CardHeader>

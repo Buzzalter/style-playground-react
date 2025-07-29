@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger, DropdownMenuCheckboxItem, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger } from "@/components/ui/dropdown-menu";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Copy, ChevronDown, User, Settings, LogOut, Plus, Filter, Download, Share, Edit, Trash2, Star, Heart, Eye, ChevronRight, MoreHorizontal } from "lucide-react";
+import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 
 export default function Dropdowns() {
@@ -496,13 +497,230 @@ export default function Dropdowns() {
       <div className="space-y-4">
         <div className="flex items-center gap-3">
           <Badge variant="secondary">Components</Badge>
-          <h1 className="text-3xl font-bold text-foreground">Dropdown Lists</h1>
+          <h1 className="text-3xl font-bold text-foreground">Dropdowns & Selects</h1>
         </div>
         <p className="text-lg text-muted-foreground">
-          Comprehensive dropdown components including menus, selects, and advanced patterns 
-          with multiple styling options and interactive features.
+          A comprehensive collection of dropdown menus, select components, and contextual 
+          menus for creating interactive navigation and selection interfaces.
         </p>
       </div>
+
+      {/* Flex Layout Dropdown Examples */}
+      <Card className="card-elegant">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            Creative Dropdown Layouts
+          </CardTitle>
+          <CardDescription>
+            Innovative flexbox layouts and styling for dropdown components
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-8">
+            {/* Multi-Column Action Bar */}
+            <div className="space-y-4">
+              <h4 className="font-semibold text-foreground">Multi-Column Action Bar</h4>
+              <div className="flex flex-wrap items-center justify-between gap-4 p-6 bg-gradient-to-r from-primary/5 via-accent/5 to-secondary/5 rounded-xl border border-border">
+                <div className="flex items-center space-x-4">
+                  <Badge variant="outline" className="bg-gradient-primary text-white border-primary">Dashboard</Badge>
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <Button variant="ghost" className="hover:bg-primary/10">
+                        <Filter className="mr-2 h-4 w-4" />
+                        Filters <ChevronDown className="ml-2 h-4 w-4" />
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent className="w-56">
+                      <DropdownMenuLabel>Filter Options</DropdownMenuLabel>
+                      <DropdownMenuSeparator />
+                      <DropdownMenuCheckboxItem checked={checkedItems.notifications}>
+                        Recent Items
+                      </DropdownMenuCheckboxItem>
+                      <DropdownMenuCheckboxItem checked={checkedItems.emails}>
+                        Favorites
+                      </DropdownMenuCheckboxItem>
+                      <DropdownMenuCheckboxItem checked={checkedItems.updates}>
+                        Shared
+                      </DropdownMenuCheckboxItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                </div>
+
+                <div className="flex items-center space-x-2">
+                  <Select defaultValue="newest">
+                    <SelectTrigger className="w-[140px] border-primary/30 focus:border-primary">
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="newest">Newest First</SelectItem>
+                      <SelectItem value="oldest">Oldest First</SelectItem>
+                      <SelectItem value="name">By Name</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <Button size="icon" variant="outline" className="border-primary/30 hover:bg-primary/10">
+                        <MoreHorizontal className="h-4 w-4" />
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="end">
+                      <DropdownMenuItem>
+                        <Eye className="mr-2 h-4 w-4" />
+                        View Settings
+                      </DropdownMenuItem>
+                      <DropdownMenuItem>
+                        <Download className="mr-2 h-4 w-4" />
+                        Export Data
+                      </DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                </div>
+              </div>
+            </div>
+
+            {/* Floating Dropdown Grid */}
+            <div className="space-y-4">
+              <h4 className="font-semibold text-foreground">Floating Dropdown Grid</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="group p-6 bg-gradient-to-br from-background to-muted/30 rounded-xl border border-border hover:shadow-xl transition-all duration-300 hover:scale-105">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
+                      <User className="w-6 h-6 text-white" />
+                    </div>
+                    <DropdownMenu>
+                      <DropdownMenuTrigger asChild>
+                        <Button size="icon" variant="ghost" className="opacity-0 group-hover:opacity-100 transition-opacity">
+                          <MoreHorizontal className="h-4 w-4" />
+                        </Button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent align="end">
+                        <DropdownMenuItem>
+                          <Edit className="mr-2 h-4 w-4" />
+                          Edit Profile
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                          <Settings className="mr-2 h-4 w-4" />
+                          Settings
+                        </DropdownMenuItem>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  </div>
+                  <Label className="text-lg font-semibold">User Management</Label>
+                  <p className="text-sm text-muted-foreground mt-1">Manage user accounts and permissions</p>
+                </div>
+
+                <div className="group p-6 bg-gradient-to-br from-background to-muted/30 rounded-xl border border-border hover:shadow-xl transition-all duration-300 hover:scale-105">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center">
+                      <Settings className="w-6 h-6 text-white" />
+                    </div>
+                    <DropdownMenu>
+                      <DropdownMenuTrigger asChild>
+                        <Button size="icon" variant="ghost" className="opacity-0 group-hover:opacity-100 transition-opacity">
+                          <MoreHorizontal className="h-4 w-4" />
+                        </Button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent align="end">
+                        <DropdownMenuItem>
+                          <Eye className="mr-2 h-4 w-4" />
+                          View Details
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                          <Share className="mr-2 h-4 w-4" />
+                          Share Access
+                        </DropdownMenuItem>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  </div>
+                  <Label className="text-lg font-semibold">System Settings</Label>
+                  <p className="text-sm text-muted-foreground mt-1">Configure system preferences</p>
+                </div>
+
+                <div className="group p-6 bg-gradient-to-br from-background to-muted/30 rounded-xl border border-border hover:shadow-xl transition-all duration-300 hover:scale-105">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center">
+                      <Star className="w-6 h-6 text-white" />
+                    </div>
+                    <DropdownMenu>
+                      <DropdownMenuTrigger asChild>
+                        <Button size="icon" variant="ghost" className="opacity-0 group-hover:opacity-100 transition-opacity">
+                          <MoreHorizontal className="h-4 w-4" />
+                        </Button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent align="end">
+                        <DropdownMenuItem>
+                          <Heart className="mr-2 h-4 w-4" />
+                          Add to Favorites
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                          <Download className="mr-2 h-4 w-4" />
+                          Download Report
+                        </DropdownMenuItem>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  </div>
+                  <Label className="text-lg font-semibold">Analytics</Label>
+                  <p className="text-sm text-muted-foreground mt-1">View performance metrics</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Inline Dropdown Navigation */}
+            <div className="space-y-4">
+              <h4 className="font-semibold text-foreground">Inline Dropdown Navigation</h4>
+              <div className="flex flex-wrap items-center gap-2 p-4 bg-muted/30 rounded-lg border border-border">
+                <span className="text-sm font-medium text-muted-foreground">Quick Actions:</span>
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="secondary" size="sm" className="gap-2">
+                      <Plus className="h-3 w-3" />
+                      Create <ChevronDown className="h-3 w-3" />
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent>
+                    <DropdownMenuItem>New Project</DropdownMenuItem>
+                    <DropdownMenuItem>New Task</DropdownMenuItem>
+                    <DropdownMenuItem>New Team</DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+                
+                <div className="w-px h-6 bg-border mx-2"></div>
+                
+                <Select defaultValue="all">
+                  <SelectTrigger className="w-[120px] h-8 text-sm">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="all">All Items</SelectItem>
+                    <SelectItem value="active">Active</SelectItem>
+                    <SelectItem value="archived">Archived</SelectItem>
+                  </SelectContent>
+                </Select>
+                
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="outline" size="sm" className="gap-2">
+                      <Share className="h-3 w-3" />
+                      Share <ChevronDown className="h-3 w-3" />
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent>
+                    <DropdownMenuItem>
+                      <User className="mr-2 h-4 w-4" />
+                      Share with Team
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                      <Download className="mr-2 h-4 w-4" />
+                      Export Link
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
 
       {/* Basic Dropdown Examples */}
       <Card className="card-elegant">

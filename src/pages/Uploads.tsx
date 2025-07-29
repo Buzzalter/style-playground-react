@@ -217,6 +217,150 @@ const handleFileUpload = (file: File) => {
         </p>
       </div>
 
+      {/* Styled Upload Layouts */}
+      <Card className="card-elegant">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <Upload className="w-5 h-5" />
+            Creative Upload Layouts
+          </CardTitle>
+          <CardDescription>
+            Flexible and visually appealing upload component designs
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-8">
+            {/* Multi-Zone Upload Grid */}
+            <div className="space-y-4">
+              <h4 className="font-semibold text-foreground">Multi-Zone Upload Grid</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="group relative overflow-hidden rounded-xl border-2 border-dashed border-primary/30 bg-gradient-to-br from-primary/5 to-accent/5 p-6 text-center transition-all duration-300 hover:border-primary/60 hover:shadow-lg hover:scale-105">
+                  <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                  <Image className="w-8 h-8 text-primary mx-auto mb-3" />
+                  <Label className="block font-medium text-foreground mb-1">Images</Label>
+                  <p className="text-xs text-muted-foreground mb-3">JPG, PNG, GIF</p>
+                  <Button size="sm" variant="outline" className="relative z-10">
+                    <Upload className="w-3 h-3 mr-2" />
+                    Choose
+                  </Button>
+                </div>
+                
+                <div className="group relative overflow-hidden rounded-xl border-2 border-dashed border-blue-300 bg-gradient-to-br from-blue-50 to-indigo-50 p-6 text-center transition-all duration-300 hover:border-blue-500 hover:shadow-lg hover:scale-105">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-600 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                  <Video className="w-8 h-8 text-blue-600 mx-auto mb-3" />
+                  <Label className="block font-medium text-foreground mb-1">Videos</Label>
+                  <p className="text-xs text-muted-foreground mb-3">MP4, AVI, MOV</p>
+                  <Button size="sm" variant="outline" className="relative z-10 border-blue-300 text-blue-600 hover:bg-blue-600 hover:text-white">
+                    <Upload className="w-3 h-3 mr-2" />
+                    Choose
+                  </Button>
+                </div>
+                
+                <div className="group relative overflow-hidden rounded-xl border-2 border-dashed border-green-300 bg-gradient-to-br from-green-50 to-emerald-50 p-6 text-center transition-all duration-300 hover:border-green-500 hover:shadow-lg hover:scale-105">
+                  <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-emerald-600 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                  <Music className="w-8 h-8 text-green-600 mx-auto mb-3" />
+                  <Label className="block font-medium text-foreground mb-1">Audio</Label>
+                  <p className="text-xs text-muted-foreground mb-3">MP3, WAV, OGG</p>
+                  <Button size="sm" variant="outline" className="relative z-10 border-green-300 text-green-600 hover:bg-green-600 hover:text-white">
+                    <Upload className="w-3 h-3 mr-2" />
+                    Choose
+                  </Button>
+                </div>
+                
+                <div className="group relative overflow-hidden rounded-xl border-2 border-dashed border-purple-300 bg-gradient-to-br from-purple-50 to-violet-50 p-6 text-center transition-all duration-300 hover:border-purple-500 hover:shadow-lg hover:scale-105">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-violet-600 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                  <FileText className="w-8 h-8 text-purple-600 mx-auto mb-3" />
+                  <Label className="block font-medium text-foreground mb-1">Documents</Label>
+                  <p className="text-xs text-muted-foreground mb-3">PDF, DOC, TXT</p>
+                  <Button size="sm" variant="outline" className="relative z-10 border-purple-300 text-purple-600 hover:bg-purple-600 hover:text-white">
+                    <Upload className="w-3 h-3 mr-2" />
+                    Choose
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* Horizontal Upload Bar */}
+            <div className="space-y-4">
+              <h4 className="font-semibold text-foreground">Horizontal Upload Bar</h4>
+              <div className="flex items-center justify-between p-6 bg-gradient-to-r from-background via-muted/30 to-background rounded-xl border-2 border-border hover:border-primary/30 transition-all duration-300">
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center">
+                    <Upload className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <Label className="text-lg font-semibold">Quick Upload</Label>
+                    <p className="text-sm text-muted-foreground">Drag files here or click to browse</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Badge variant="outline" className="bg-primary/10 text-primary border-primary/30">
+                    Max 50MB
+                  </Badge>
+                  <Input 
+                    type="file" 
+                    multiple 
+                    className="hidden" 
+                    id="quick-upload"
+                    onChange={handleFileInput}
+                  />
+                  <label htmlFor="quick-upload">
+                    <Button variant="gradient" className="cursor-pointer">
+                      Select Files
+                    </Button>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            {/* Compact Upload Cards */}
+            <div className="space-y-4">
+              <h4 className="font-semibold text-foreground">Compact Upload Cards</h4>
+              <div className="flex flex-wrap gap-4">
+                <div className="flex items-center space-x-3 p-4 bg-gradient-to-r from-background to-muted/40 rounded-lg border border-border hover:shadow-md transition-all duration-200 min-w-[280px]">
+                  <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-md flex items-center justify-center flex-shrink-0">
+                    <Image className="w-5 h-5 text-white" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <Label className="block font-medium text-foreground">Profile Picture</Label>
+                    <p className="text-xs text-muted-foreground">JPG, PNG up to 5MB</p>
+                  </div>
+                  <Button size="sm" variant="outline">
+                    Browse
+                  </Button>
+                </div>
+                
+                <div className="flex items-center space-x-3 p-4 bg-gradient-to-r from-background to-muted/40 rounded-lg border border-border hover:shadow-md transition-all duration-200 min-w-[280px]">
+                  <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-md flex items-center justify-center flex-shrink-0">
+                    <FileText className="w-5 h-5 text-white" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <Label className="block font-medium text-foreground">Resume/CV</Label>
+                    <p className="text-xs text-muted-foreground">PDF, DOC up to 10MB</p>
+                  </div>
+                  <Button size="sm" variant="outline">
+                    Browse
+                  </Button>
+                </div>
+                
+                <div className="flex items-center space-x-3 p-4 bg-gradient-to-r from-background to-muted/40 rounded-lg border border-border hover:shadow-md transition-all duration-200 min-w-[280px]">
+                  <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-md flex items-center justify-center flex-shrink-0">
+                    <Video className="w-5 h-5 text-white" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <Label className="block font-medium text-foreground">Demo Video</Label>
+                    <p className="text-xs text-muted-foreground">MP4, MOV up to 100MB</p>
+                  </div>
+                  <Button size="sm" variant="outline">
+                    Browse
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
       {/* Upload Examples */}
       {uploadExamples.map((example, index) => (
         <Card key={index} className="card-elegant">
