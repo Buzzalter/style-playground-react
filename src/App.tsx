@@ -10,6 +10,8 @@ import Forms from "./pages/Forms";
 import Controls from "./pages/Controls";
 import ProgressPage from "./pages/ProgressPage";
 import Uploads from "./pages/Uploads";
+import Dropdowns from "./pages/Dropdowns";
+import Toasts from "./pages/Toasts";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,11 +29,11 @@ const App = () => {
             <Route index element={<Overview />} />
             <Route path="buttons" element={<Buttons />} />
             {/* Placeholder routes for other component pages */}
-            <Route path="dropdowns" element={<div className="text-center py-12"><h2 className="text-2xl font-bold">Dropdowns - Coming Soon</h2></div>} />
+            <Route path="dropdowns" element={<Dropdowns />} />
             <Route path="forms" element={<Forms />} />
             <Route path="controls" element={<Controls />} />
             <Route path="uploads" element={<Uploads />} />
-            <Route path="toasts" element={<div className="text-center py-12"><h2 className="text-2xl font-bold">Toasts - Coming Soon</h2></div>} />
+            <Route path="toasts" element={<Toasts />} />
             <Route path="progress" element={<ProgressPage />} />
             <Route path="status" element={<div className="text-center py-12"><h2 className="text-2xl font-bold">Status Indicators - Coming Soon</h2></div>} />
             <Route path="popups" element={<div className="text-center py-12"><h2 className="text-2xl font-bold">Popups & Modals - Coming Soon</h2></div>} />

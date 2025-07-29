@@ -58,6 +58,47 @@ export default function Controls() {
 </div>`
     },
     {
+      title: "Gradient Slider",
+      description: "Styled slider with gradient track",
+      component: (
+        <div className="space-y-3">
+          <Label>Brightness: {brightness[0]}%</Label>
+          <Slider
+            value={brightness}
+            onValueChange={setBrightness}
+            max={100}
+            step={1}
+            className="w-full [&>span:first-child]:h-3 [&>span:first-child]:bg-gradient-primary [&_[role=slider]]:bg-white [&_[role=slider]]:border-2 [&_[role=slider]]:border-primary [&_[role=slider]]:shadow-lg"
+          />
+        </div>
+      ),
+      code: `<Slider
+  value={brightness}
+  onValueChange={setBrightness}
+  className="[&>span:first-child]:h-3 [&>span:first-child]:bg-gradient-primary [&_[role=slider]]:bg-white [&_[role=slider]]:border-2 [&_[role=slider]]:border-primary"
+/>`
+    },
+    {
+      title: "Large Colorful Slider",
+      description: "Bigger slider with vibrant styling",
+      component: (
+        <div className="space-y-4">
+          <Label className="text-lg font-semibold">Temperature: {priceRange[0]}°C</Label>
+          <Slider
+            value={[priceRange[0]]}
+            onValueChange={(value) => setPriceRange([value[0], priceRange[1]])}
+            max={40}
+            min={-10}
+            step={1}
+            className="w-full [&>span:first-child]:h-4 [&>span:first-child]:bg-gradient-to-r [&>span:first-child]:from-blue-500 [&>span:first-child]:via-green-500 [&>span:first-child]:to-red-500 [&_[role=slider]]:h-6 [&_[role=slider]]:w-6 [&_[role=slider]]:bg-white [&_[role=slider]]:border-4 [&_[role=slider]]:border-primary [&_[role=slider]]:shadow-xl"
+          />
+        </div>
+      ),
+      code: `<Slider
+  className="[&>span:first-child]:h-4 [&>span:first-child]:bg-gradient-to-r [&>span:first-child]:from-blue-500 [&>span:first-child]:via-green-500 [&>span:first-child]:to-red-500 [&_[role=slider]]:h-6 [&_[role=slider]]:w-6"
+/>`
+    },
+    {
       title: "Range Slider",
       description: "Dual-handle slider for price ranges",
       component: (
@@ -86,6 +127,25 @@ export default function Controls() {
     className="w-full"
   />
 </div>`
+    },
+    {
+      title: "Minimal Slider",
+      description: "Clean, minimal styling",
+      component: (
+        <div className="space-y-3">
+          <Label className="text-sm text-muted-foreground">Progress: {volume[0]}%</Label>
+          <Slider
+            value={volume}
+            onValueChange={setVolume}
+            max={100}
+            step={1}
+            className="w-full [&>span:first-child]:h-1 [&>span:first-child]:bg-muted [&>span:last-child]:bg-foreground [&_[role=slider]]:h-3 [&_[role=slider]]:w-3 [&_[role=slider]]:bg-foreground [&_[role=slider]]:border-0"
+          />
+        </div>
+      ),
+      code: `<Slider
+  className="[&>span:first-child]:h-1 [&>span:first-child]:bg-muted [&>span:last-child]:bg-foreground [&_[role=slider]]:h-3 [&_[role=slider]]:w-3 [&_[role=slider]]:bg-foreground [&_[role=slider]]:border-0"
+/>`
     },
     {
       title: "Brightness Control",
@@ -149,6 +209,42 @@ export default function Controls() {
 </div>`
     },
     {
+      title: "Large Colorful Switch",
+      description: "Bigger switch with custom colors",
+      component: (
+        <div className="flex items-center space-x-3">
+          <Switch 
+            checked={darkMode}
+            onCheckedChange={setDarkMode}
+            className="data-[state=checked]:bg-green-500 data-[state=unchecked]:bg-red-500 h-7 w-12"
+          />
+          <Label className="text-lg font-medium">Power Mode</Label>
+        </div>
+      ),
+      code: `<Switch 
+  checked={darkMode}
+  onCheckedChange={setDarkMode}
+  className="data-[state=checked]:bg-green-500 data-[state=unchecked]:bg-red-500 h-7 w-12"
+/>`
+    },
+    {
+      title: "Gradient Switch",
+      description: "Switch with gradient background",
+      component: (
+        <div className="flex items-center space-x-3">
+          <Switch 
+            checked={wifi}
+            onCheckedChange={setWifi}
+            className="data-[state=checked]:bg-gradient-primary data-[state=unchecked]:bg-muted shadow-lg"
+          />
+          <Label>Premium Features</Label>
+        </div>
+      ),
+      code: `<Switch 
+  className="data-[state=checked]:bg-gradient-primary data-[state=unchecked]:bg-muted shadow-lg"
+/>`
+    },
+    {
       title: "Switch with Icon",
       description: "Toggle with visual icon representation",
       component: (
@@ -175,6 +271,23 @@ export default function Controls() {
   </div>
   <Label>WiFi {wifi ? 'On' : 'Off'}</Label>
 </div>`
+    },
+    {
+      title: "Minimal Switch",
+      description: "Clean, borderless design",
+      component: (
+        <div className="flex items-center space-x-2">
+          <Switch 
+            checked={notifications}
+            onCheckedChange={setNotifications}
+            className="data-[state=checked]:bg-foreground data-[state=unchecked]:bg-muted border-0 shadow-none h-5 w-9"
+          />
+          <Label className="text-sm">Auto-save</Label>
+        </div>
+      ),
+      code: `<Switch 
+  className="data-[state=checked]:bg-foreground data-[state=unchecked]:bg-muted border-0 shadow-none h-5 w-9"
+/>`
     },
     {
       title: "Dark Mode Toggle",
